@@ -1,0 +1,46 @@
+.colsFlex {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.colFlex {
+  flex-basis: 100%;
+}
+
+.colFlex--2 {
+  flex-basis: 50%;
+}
+
+.colFlex--3 {
+  flex-basis: calc(100%/3);
+}
+
+.colFlex--4 {
+  flex-basis: 25%;
+}
+
+.colFlex--5 {
+  flex-basis: 20%;
+}
+
+.colFlex--6 {
+  flex-basis: calc(100%/6);
+}
+
+
+
+// @media (max-width: 992px) {
+//   .colFlex--4 {
+//     flex-basis: 50%;
+//   }
+// }
+
+@media (max-width: 768px) {
+  .colFlex--2,
+  .colFlex--3,
+  .colFlex--4,
+  .colFlex--5,
+  .colFlex--6 {
+    flex-basis: 100%;
+  }
+}

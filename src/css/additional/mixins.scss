@@ -1,0 +1,56 @@
+/*
+mixins for:
+  clearfix
+  icon
+  max lines of text
+
+  show animation
+  hide animation
+*/
+
+@mixin clearfix() {
+  overflow: hidden;
+  zoom: 1;
+
+  &:before,
+  &:after {
+    content: "";
+    display: table;
+  }
+
+  &:after {
+    clear: both;
+  }
+}
+
+@mixin icon($name, $width, $height) {
+  display: inline-block;
+  width: $width;
+  height: $height;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-image: url('../img/icons/svg/#{$name}.svg');
+  background-size: $width $height;
+
+  .no-svg & {
+    background-image: url('../img/icons/png/#{$name}.png');
+  }
+}
+
+@mixin maxTextLines($maxLinesNumber) {
+  display: -webkit-box;
+  -webkit-line-clamp: $maxLinesNumber;
+  -webkit-box-orient: vertical;
+}
+
+@mixin show() {
+  visibility: visible;
+  opacity: 1;
+  transition: opacity $transition-normal, visibility $transition-normal;
+}
+
+@mixin hide() {
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity $transition-normal, visibility $transition-normal;
+}
