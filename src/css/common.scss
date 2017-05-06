@@ -19,16 +19,33 @@ button {
 ::-moz-placeholder {}
 :-ms-input-placeholder {}
 
+.contentWrapper {
+
+}
+
 .contentIn {
   position: relative;
-  max-width: 1280px;
+  max-width: 950px;
   min-width: 280px;
   margin: 0 auto;
   padding: 0 20px;
 }
 
-.titleMain {
+.contentIn--big {
+  max-width: 1064px;
+}
 
+.titleMain {
+  font: 44px/40px $bodoni;
+}
+
+.titleMain--white {
+  color: $white;
+}
+
+.subtitleMain {
+  font: 35px/40px $bodoni;
+  color: $gold;
 }
 
 
@@ -40,5 +57,13 @@ button {
 
 
 @media (max-width: 768px) {
+  .titleMain {
+    font-size: 30px;
+    line-height: 30px;
+  }
 
+  .subtitleMain {
+    font-size: 24px;
+    line-height: 32px;
+  }
 }
