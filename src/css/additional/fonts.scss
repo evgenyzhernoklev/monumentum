@@ -52,3 +52,16 @@
     font-style: normal;
 
 }
+
+
+
+@font-face {
+    font-family: 'BodoniCyrillic';
+    src: url('../fonts/BodoniCyrillic.eot');
+    src: url('../fonts/BodoniCyrillic.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/BodoniCyrillic.woff') format('woff'),
+         url('../fonts/BodoniCyrillic.ttf') format('truetype'),
+         url('../fonts/BodoniCyrillic.svg#BodoniCyrillic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
