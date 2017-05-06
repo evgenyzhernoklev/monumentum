@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="42px" height="31px" viewBox="0 0 42 31" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 43.2 (39069) - http://www.bohemiancoding.com/sketch -->
+    <title>Untitled</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group-4" stroke="#FFFFFF" stroke-width="1.5">
+            <path d="M41.25,30.25 L0.75,30.25 L0.75,28 C0.75,26.7595015 1.76191457,25.75 3.00368123,25.75 L38.9963188,25.75 C40.2399032,25.75 41.25,26.7596419 41.25,28 L41.25,30.25 Z" id="Rectangle-2"></path>
+            <path d="M6.25,25.25 L3.75,25.25 L3.75,1.99700466 C3.75,1.30544488 4.30479849,0.75 5,0.75 C5.69024826,0.75 6.25,1.30908536 6.25,1.99700466 L6.25,25.25 Z" id="Rectangle-6"></path>
+            <path d="M22.25,25.25 L19.75,25.25 L19.75,1.99700466 C19.75,1.30544488 20.3047985,0.75 21,0.75 C21.6902483,0.75 22.25,1.30908536 22.25,1.99700466 L22.25,25.25 Z" id="Rectangle-6"></path>
+            <path d="M38.25,25.25 L35.75,25.25 L35.75,1.99700466 C35.75,1.30544488 36.3047985,0.75 37,0.75 C37.6902483,0.75 38.25,1.30908536 38.25,1.99700466 L38.25,25.25 Z" id="Rectangle-6"></path>
+            <path d="M6,7 C6,7 13,10 19.5,7" id="Path-8"></path>
+            <path d="M22,7 C22,7 29,10 35.5,7" id="Path-8"></path>
+            <path d="M6,17 C6,17 13,20 19.5,17" id="Path-8"></path>
+            <path d="M22,17 C22,17 29,20 35.5,17" id="Path-8"></path>
+        </g>
+    </g>
+</svg>
