@@ -1,0 +1,30 @@
+.header {
+  height: 680px;
+  background: url('../img/header.jpg') no-repeat bottom center;
+  background-size: cover;
+
+  .contentIn {
+    height: 100%;
+  }
+}
+
+.headerLink {
+  display: inline-block;
+  position: absolute;
+  top: 45%;
+  font: 15px/18px $muller-extrabold;
+  color: $white;
+  border-bottom: 1px solid $gold;
+
+  &:hover {
+    border-bottom-color: transparent;
+  }
+}
+
+.headerLink--phone {
+  left: 20px;
+}
+
+.headerLink--mail {
+  right: 20px;
+}
