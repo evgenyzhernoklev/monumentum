@@ -10,6 +10,18 @@
   vertical-align: middle;
 }
 
-// .icon--market {
-//   @include icon(market_green, 44px, 42px);
-// }
+.icon--scythe {
+  @include icon(scythe, 46px, 62px);
+}
+
+.icon--flovers {
+  @include icon(flovers, 62px, 63px);
+}
+
+.icon--broom {
+  @include icon(broom, 63px, 63px);
+}
+
+.icon--brush {
+  @include icon(brush, 63px, 63px);
+}

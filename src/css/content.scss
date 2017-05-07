@@ -51,8 +51,64 @@
 
 
 /***** care *****/
+.contentIn--care {
+  padding-top: 100px;
+  padding-bottom: 98px;
 
+  .titleMain {
+    text-align: center;
+  }
+}
 
+// cols width icons
+.careCols {
+  margin: 100px 0 90px;
+}
+
+.careCol {
+  padding: 10px;
+  border-right: 1px solid #192936;
+  text-align: center;
+
+  &:last-child {
+    border-right: 0;
+  }
+}
+
+.careCol__iconWrapper {
+  margin-bottom: 45px;
+  height: 80px;
+  line-height: 80px;
+
+  .icon {
+
+  }
+}
+
+.careCol__title {
+  margin: 0 auto;
+  text-transform: uppercase;
+  font: 12px/17px $muller-medium;
+  color: $white;
+}
+
+// info cols
+.careInfoCols {
+
+}
+
+.careInfoCol {
+  margin-bottom: 40px;
+  color: $white;
+
+  &:nth-child(2n + 1) {
+    padding-right: 40px;
+  }
+
+  &:nth-child(2n) {
+    padding-left: 40px;
+  }
+}
 
 
 
