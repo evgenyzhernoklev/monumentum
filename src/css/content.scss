@@ -7,6 +7,7 @@
 /***** scroll blocks *****/
 .infoScroll {
   position: relative;
+  padding-top: 100px;
   padding-left: 415px;
 }
 
@@ -14,7 +15,7 @@
 .infoScrollSidebar {
   width: 320px;
   position: absolute;
-  top: 12px;
+  top: 112px;
   left: 0;
 }
 
@@ -27,6 +28,16 @@
 
   &:last-child {
     margin-bottom: 0;
+  }
+
+  a {
+    white-space: nowrap;
+    color: $black;
+    border-bottom: 1px solid $black;
+
+    &:hover {
+      border-bottom-color: transparent;
+    }
   }
 }
 
@@ -75,8 +86,34 @@
 }
 
 // vacancies
+.vacanciesList {
+  padding-bottom: 123px;
+}
 
+.vacanciesListItem {
+  margin-bottom: 30px;
+  padding: 34px 33px 40px;
+  border: 1px solid #E5E5E5;
 
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.vacanciesListItem__subtitle {
+  margin-bottom: 14px;
+  font: 12px/17px $muller-medium;
+  text-transform: uppercase;
+  color: #C0C0C0;
+}
+
+.vacanciesListItem__title {
+  margin-bottom: 15px;
+}
+
+.vacanciesListItem__info {
+
+}
 
 
 
