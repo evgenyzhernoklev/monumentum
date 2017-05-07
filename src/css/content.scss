@@ -6,20 +6,28 @@
 
 /***** scroll blocks *****/
 .infoScroll {
-
+  position: relative;
+  padding-left: 415px;
 }
 
 // sidebar
 .infoScrollSidebar {
-
+  width: 320px;
+  position: absolute;
+  top: 12px;
+  left: 0;
 }
 
 .infoScrollSidebar__title {
-
+  margin-bottom: 30px;
 }
 
 .infoScrollSidebar__text {
+  margin-bottom: 25px;
 
+  &:last-child {
+    margin-bottom: 0;
+  }
 }
 
 // content
@@ -29,15 +37,37 @@
 
 // steps
 .stepsList {
-
+  margin-bottom: 34px;
+  counter-reset: work_steps;
 }
 
 .stepsListItem {
+  position: relative;
+  padding: 4px 0 100px 45px;
+  border-left: 1px solid rgba(0,0,0, 0.1);
 
+  &:last-child {
+    border: 0;
+  }
+
+  &:before {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    top: 0;
+    left: -20px;
+    counter-increment: work_steps;
+    content: '0'counter(work_steps);
+    font: 10px/40px $muller-regular;
+    text-align: center;
+    color: #ADADAD;
+    background-color: $white;
+  }
 }
 
 .stepsListItem__title {
-
+  margin-bottom: 16px;
 }
 
 .stepsListItem__text {
