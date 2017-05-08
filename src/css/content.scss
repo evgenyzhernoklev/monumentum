@@ -1,6 +1,89 @@
 /***** products *****/
+.products {
+  margin: -90px 0 40px;
+}
 
+.productCol {
+  position: relative;
+  height: 376px;
+  cursor: pointer;
 
+  &:hover {
+    .productColInfo {
+      top: -35px;
+      bottom: -35px;
+      left: -1px;
+      right: -1px;
+      z-index: 9;
+    }
+
+    .productColInfo__overlay {
+      background-color: rgba(0,0,0, 0.4);
+    }
+  }
+}
+
+.productColInfo {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 25px 30px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  transition: top $transition-fast, bottom $transition-fast, left $transition-fast, right $transition-fast;
+}
+
+.productColInfo--vertical {
+  background-image: url('../img/products/vertical/vertical_main.jpg');
+}
+
+.productColInfo--horizontal {
+  background-image: url('../img/products/horizontal/horizontal_main.jpg');
+}
+
+.productColInfo--exclusive {
+  background-image: url('../img/products/exclusive/exclusive_main.jpg');
+}
+
+.productColInfo--fence {
+  background-image: url('../img/products/fence/fence_main.jpg');
+}
+
+.productColInfo__overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0,0,0, 0.6);
+  transition: background-color $transition-fast;
+}
+
+.productColInfoTitle {
+  position: relative;
+  padding-left: 60px;
+}
+
+.productColInfoTitle__iconWrapper {
+  height: 40px;
+  line-height: 40px;
+  position: absolute;
+  top: -2px;
+  left: 0;
+
+  .icon {
+
+  }
+}
+
+.productColInfoTitle__text {
+  font-size: 15px;
+  line-height: 21px;
+  color: $white;
+}
 
 
 

@@ -25,3 +25,19 @@
 .icon--brush {
   @include icon(brush, 63px, 63px);
 }
+
+.icon--monumentVertical {
+  @include icon(monument_vertical, 29px, 39px);
+}
+
+.icon--monumentHorizontal {
+  @include icon(monument_horizontal, 41px, 32px);
+}
+
+.icon--monumentExclusive {
+  @include icon(monument_exclusive, 35px, 35px);
+}
+
+.icon--fence {
+  @include icon(fence, 42px, 31px);
+}
