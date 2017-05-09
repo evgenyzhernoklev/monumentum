@@ -1,6 +1,7 @@
 $(document).ready(function() {
     var $window = $(window),
-        $body = $('body');
+        $body = $('body'),
+        scrollTop = 0;
 
     // check if browser supports svg
     var supportsSVG = !!document.createElementNS && !!document.createElementNS("http://www.w3.org/2000/svg", "svg").createSVGRect;
@@ -25,11 +26,29 @@ $(document).ready(function() {
 
 
 
+    // sidebar scroll
+    var $sidebarWrapper = $('.sidebar-wrapper'),
+        $sidebar = $('.sidebar-scroll'),
+        sidebarStartPosition = $sidebar.offset().top,
+        sidebarLeftPosition = $sidebar.offset().left,
+        sidebarStopPosition = $sidebarWrapper.offset().top + $sidebarWrapper.innerHeight() - $sidebar.innerHeight();
+
+    $window.on('load scroll', function() {
+      scrollTop = $window.scrollTop();
+
+      if (scrollTop > sidebarStartPosition && scrollTop < sidebarStopPosition) {
+        $sidebar.addClass('is-fixed').css('left', sidebarLeftPosition);
+      } else {
+        $sidebar.removeClass('is-fixed').css('left', '0');
+      }
+    });
+
+
+
     // menu
     var $menuWrapper = $('.menu'),
         MENU_HEIGHT = $menuWrapper.height(),
         $menuLinks = $menuWrapper.find('.menu-scroll'),
-        scrollTop = 0,
         clickMenuFlag = false,
         $contentBlocks = $('.content-scroll'),
         contentBlocksTopPoints = [],

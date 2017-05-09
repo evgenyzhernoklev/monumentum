@@ -97,9 +97,14 @@
 // sidebar
 .infoScrollSidebar {
   width: 320px;
+  padding-top: 112px;
   position: absolute;
-  top: 112px;
+  top: 0;
   left: 0;
+
+  &.is-fixed {
+    position: fixed;
+  }
 }
 
 .infoScrollSidebar__title {
