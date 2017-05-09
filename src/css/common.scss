@@ -25,10 +25,10 @@ button {
 
 .contentIn {
   position: relative;
-  max-width: 950px;
-  min-width: 280px;
+  max-width: 970px;
+  min-width: 260px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 30px;
 }
 
 .contentIn--big {
@@ -61,6 +61,10 @@ button {
 
 
 @media (max-width: 768px) {
+  body {
+    font-size: 14px;
+  }
+
   .titleMain {
     font-size: 30px;
     line-height: 30px;

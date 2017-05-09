@@ -41,3 +41,23 @@
 .icon--fence {
   @include icon(fence, 42px, 31px);
 }
+
+
+
+@media (max-width: 768px) {
+  .icon--scythe {
+    @include icon(scythe, 26px, 35px);
+  }
+
+  .icon--flovers {
+    @include icon(flovers, 35px, 35px);
+  }
+
+  .icon--broom {
+    @include icon(broom, 35px, 35px);
+  }
+
+  .icon--brush {
+    @include icon(brush, 35px, 35px);
+  }
+}
