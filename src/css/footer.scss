@@ -59,12 +59,39 @@
 
 
 
-@media (max-width: 960px) {
-
-}
-
-
-
 @media (max-width: 768px) {
+  .footer {
+    padding: 37px 0 70px;
+  }
 
+  .contacts {
+    margin: 47px 0 67px;
+  }
+
+  .contactsAddress {
+    margin-bottom: 47px;
+    font-size: 18px;
+    line-height: 25px;
+  }
+
+  .contactsAddress__mail {
+    display: inline-block;
+    margin-top: 27px;
+  }
+
+  .contactsPhones__phone {
+    font-size: 18px;
+    line-height: 25px;
+  }
+
+  .contactsPhones__dot {
+    display: block;
+    margin: 3px 0;
+    height: 1px;
+    background: none;
+  }
+
+  .copyright {
+    font-size: 16px;
+  }
 }
