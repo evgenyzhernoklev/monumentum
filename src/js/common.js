@@ -29,15 +29,21 @@ $(document).ready(function() {
     var $menuWrapper = $('.menu'),
         MENU_HEIGHT = $menuWrapper.height(),
         $menuLinks = $menuWrapper.find('.menu-scroll'),
-        scrollTop = 0;
+        scrollTop = 0,
+        clickMenuFlag = false;
 
     function scrollToElement(target) {
       var targetPosition = $(target).offset().top - MENU_HEIGHT;
 
+      clickMenuFlag = true;
+
       $('body, html').animate({
         scrollTop: targetPosition
       }, {
-        duration: 700
+        duration: 700,
+        complete: function() {
+          clickMenuFlag = false;
+        }
       });
     }
 
@@ -50,8 +56,10 @@ $(document).ready(function() {
         $menuWrapper.removeClass('is-scrolled');
       }
 
-      var scrollTopMenu = scrollTop + MENU_HEIGHT + 1;
-      checkActiveContentBlocks(scrollTopMenu);
+      if (!clickMenuFlag) {
+        var scrollTopMenu = scrollTop + MENU_HEIGHT + 1;
+        checkActiveContentBlocks(scrollTopMenu);
+      }
     });
 
     $menuLinks.on('click', function(e) {
