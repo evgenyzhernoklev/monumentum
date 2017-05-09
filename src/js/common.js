@@ -30,13 +30,19 @@ $(document).ready(function() {
         MENU_HEIGHT = $menuWrapper.height(),
         $menuLinks = $menuWrapper.find('.menu-scroll'),
         scrollTop = 0,
-        clickMenuFlag = false;
+        clickMenuFlag = false,
+        $contentBlocks = $('.content-scroll'),
+        contentBlocksTopPoints = [],
+        collectContentBlocksTopPoints = function () {
+          $contentBlocks.each(function(index, element) {
+            contentBlocksTopPoints.push($(element).offset().top);
+          });
+        };
 
     function scrollToElement(target) {
       var targetPosition = $(target).offset().top - MENU_HEIGHT;
 
       clickMenuFlag = true;
-
       $('body, html').animate({
         scrollTop: targetPosition
       }, {
@@ -47,20 +53,38 @@ $(document).ready(function() {
       });
     }
 
-    $window.on('load scroll', function() {
-      scrollTop = $window.scrollTop();
+    function checkActiveContentBlocks(scrollTop) {
+      var current;
 
-      if (scrollTop > 0) {
-        $menuWrapper.addClass('is-scrolled');
-      } else {
-        $menuWrapper.removeClass('is-scrolled');
-      }
+      contentBlocksTopPoints.forEach(function(item, i, arr) {
+        if (scrollTop > arr[i] && scrollTop < arr[i+1]) {
+          current = i;
+        }
+      });
+      $menuLinks.removeClass('is-active');
+      $menuLinks.eq(current).addClass('is-active');
+    }
 
-      if (!clickMenuFlag) {
-        var scrollTopMenu = scrollTop + MENU_HEIGHT + 1;
-        checkActiveContentBlocks(scrollTopMenu);
-      }
-    });
+    collectContentBlocksTopPoints();
+
+    $window
+      .on('load scroll', function() {
+        scrollTop = $window.scrollTop();
+
+        if (scrollTop > 0) {
+          $menuWrapper.addClass('is-scrolled');
+        } else {
+          $menuWrapper.removeClass('is-scrolled');
+        }
+
+        if (!clickMenuFlag) {
+          var scrollTopMenu = scrollTop + MENU_HEIGHT + 1;
+          checkActiveContentBlocks(scrollTopMenu);
+        }
+      })
+      .on('resize', function() {
+        collectContentBlocksTopPoints();
+      });
 
     $menuLinks.on('click', function(e) {
       e.preventDefault();
@@ -70,33 +94,4 @@ $(document).ready(function() {
       $(this).addClass('is-active');
       scrollToElement(target);
     });
-
-    // content scrolling
-    var $contentBlocks = $('.content-scroll'),
-        contentBlocksTopPoints = [],
-        collectContentBlocksTopPoints = function () {
-          $contentBlocks.each(function(index, element) {
-            contentBlocksTopPoints.push($(element).offset().top);
-          });
-        };
-
-    function checkActiveContentBlocks(scrollTop) {
-      var current;
-
-      contentBlocksTopPoints.forEach(function(item, i, arr) {
-        if (scrollTop > arr[i] && scrollTop < arr[i+1]) {
-          current = i;
-        }
-      });
-
-      $menuLinks.removeClass('is-active');
-      $menuLinks.eq(current).addClass('is-active');
-    }
-
-    collectContentBlocksTopPoints();
-
-    $window.on('resize', function() {
-      collectContentBlocksTopPoints();
-    });
-
 });
