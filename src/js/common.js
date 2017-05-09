@@ -49,13 +49,46 @@ $(document).ready(function() {
       } else {
         $menuWrapper.removeClass('is-scrolled');
       }
+
+      var scrollTopMenu = scrollTop + MENU_HEIGHT + 1;
+      checkActiveContentBlocks(scrollTopMenu);
     });
 
     $menuLinks.on('click', function(e) {
       e.preventDefault();
       var target = $(this).attr('href');
+
+      $menuLinks.removeClass('is-active');
+      $(this).addClass('is-active');
       scrollToElement(target);
     });
 
+    // content scrolling
+    var $contentBlocks = $('.content-scroll'),
+        contentBlocksTopPoints = [],
+        collectContentBlocksTopPoints = function () {
+          $contentBlocks.each(function(index, element) {
+            contentBlocksTopPoints.push($(element).offset().top);
+          });
+        };
+
+    function checkActiveContentBlocks(scrollTop) {
+      var current;
+
+      contentBlocksTopPoints.forEach(function(item, i, arr) {
+        if (scrollTop > arr[i] && scrollTop < arr[i+1]) {
+          current = i;
+        }
+      });
+
+      $menuLinks.removeClass('is-active');
+      $menuLinks.eq(current).addClass('is-active');
+    }
+
+    collectContentBlocksTopPoints();
+
+    $window.on('resize', function() {
+      collectContentBlocksTopPoints();
+    });
 
 });

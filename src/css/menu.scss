@@ -89,7 +89,7 @@
   vertical-align: middle;
 
   &:hover,
-  .is-active {
+  &.is-active {
     color: $gold;
   }
 }
