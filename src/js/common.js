@@ -27,33 +27,35 @@ $(document).ready(function() {
 
 
     // sidebar scroll
-    var $sidebarWrapper = $('.sidebar-wrapper'),
-        sidebarWrapperHeight = $sidebarWrapper.height(),
-        $sidebar = $('.sidebar-scroll'),
-        sidebarHeight = $sidebar.innerHeight(),
-        sidebarStartPosition = $sidebar.offset().top,
-        sidebarLeftPosition = $sidebar.offset().left,
-        sidebarStopPosition = $sidebarWrapper.offset().top + sidebarWrapperHeight - sidebarHeight;
+    $('.sidebar-wrapper').each(function(index, element) {
+      var $sidebarWrapper = $(element),
+          sidebarWrapperHeight = $sidebarWrapper.height(),
+          $sidebar = $sidebarWrapper.find('.sidebar-scroll'),
+          sidebarHeight = $sidebar.innerHeight(),
+          sidebarStartPosition = $sidebar.offset().top,
+          sidebarLeftPosition = $sidebar.offset().left,
+          sidebarStopPosition = $sidebarWrapper.offset().top + sidebarWrapperHeight - sidebarHeight;
 
-    $window.on('load scroll', function() {
-      scrollTop = $window.scrollTop();
+      $window.on('load scroll', function() {
+        scrollTop = $window.scrollTop();
 
-      if (scrollTop > sidebarStartPosition) {
-        if (scrollTop < sidebarStopPosition) {
-          $sidebar.addClass('is-fixed').css({
-            'left': sidebarLeftPosition,
-            'top': '0'
-          });
+        if (scrollTop > sidebarStartPosition) {
+          if (scrollTop < sidebarStopPosition) {
+            $sidebar.addClass('is-fixed').css({
+              'left': sidebarLeftPosition,
+              'top': '0'
+            });
+          } else {
+            $sidebar.removeClass('is-fixed');
+            $sidebar.css({
+              'top': sidebarWrapperHeight - sidebarHeight,
+              'left': '0'
+            });
+          }
         } else {
-          $sidebar.removeClass('is-fixed');
-          $sidebar.css({
-            'top': sidebarWrapperHeight - sidebarHeight,
-            'left': '0'
-          });
+          $sidebar.removeClass('is-fixed').css('left', '0');
         }
-      } else {
-        $sidebar.removeClass('is-fixed').css('left', '0');
-      }
+      });
     });
 
 
