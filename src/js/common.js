@@ -141,6 +141,8 @@ $(document).ready(function() {
             zoom: 10
         });
 
+        myMap.behaviors.disable('scrollZoom');
+
         var coords = [
                 [55.75, 37.50],
                 [55.75, 37.71],
