@@ -42,6 +42,10 @@
   @include icon(fence, 42px, 31px);
 }
 
+.icon--popupClose {
+  @include icon(popup_close, 56px, 56px);
+}
+
 
 
 @media (max-width: 768px) {

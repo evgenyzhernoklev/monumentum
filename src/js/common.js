@@ -163,4 +163,22 @@ $(document).ready(function() {
 
         myMap.geoObjects.add(myCollection);
     }
+
+
+
+    // popups with sliders
+    $body.on('click', '.popup-open', function(e) {
+      e.preventDefault();
+      var target = $(this).data('popup'),
+          $target = $('.' + target);
+
+      $body.addClass('is-overflow');
+      $target.bPopup();
+    });
+
+    $body.on('click', '.popup-closing', function(e) {
+      e.preventDefault();
+      $(this).closest('.popup').bPopup().close();
+      $body.removeClass('is-overflow');
+    });
 });
