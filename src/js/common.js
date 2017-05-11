@@ -141,8 +141,24 @@ $(document).ready(function() {
             zoom: 10
         });
 
-        myPlacemark = new ymaps.Placemark([55.76, 37.64]);
+        var coords = [
+                [55.75, 37.50],
+                [55.75, 37.71],
+                [55.70, 37.70],
+                [55.732312, 37.691039]
+            ],
+            myCollection = new ymaps.GeoObjectCollection();
 
-        myMap.geoObjects.add(myPlacemark);
+        for (var i = 0; i < coords.length; i++) {
+            myCollection.add(
+              new ymaps.Placemark(coords[i], {}, {
+                iconLayout: 'default#image',
+                iconImageHref: '/img/placemark.svg',
+                conImageSize: [40, 40]
+              })
+            );
+        }
+
+        myMap.geoObjects.add(myCollection);
     }
 });
