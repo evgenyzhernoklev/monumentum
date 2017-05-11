@@ -11,21 +11,6 @@ $(document).ready(function() {
 
 
 
-    // popup opening
-    $body.on('click', '.popup-open', function(e) {
-      e.preventDefault();
-      var target = $(this).data('popup'),
-          $target = $('.' + target);
-
-      $target.bPopup({
-        closeClass: 'popup-close',
-        opacity: 0.8,
-        follow: false
-      });
-    });
-
-
-
     // sidebar scroll
     $('.sidebar-wrapper').each(function(index, element) {
       var $sidebarWrapper = $(element),
@@ -170,15 +155,39 @@ $(document).ready(function() {
     $body.on('click', '.popup-open', function(e) {
       e.preventDefault();
       var target = $(this).data('popup'),
-          $target = $('.' + target);
+          $target = $('.' + target),
+          $sliderTop = $target.find('.sliderTop'),
+          $sliderBottom = $target.find('.sliderBottom');
 
-      $body.addClass('is-overflow');
-      $target.bPopup();
-    });
+      $target.bPopup({
+        closeClass: 'popup-close',
+        follow: false,
+        opacity: 1,
+        onOpen: function() {
+          $body.addClass('is-overflow');
 
-    $body.on('click', '.popup-closing', function(e) {
-      e.preventDefault();
-      $(this).closest('.popup').bPopup().close();
-      $body.removeClass('is-overflow');
+          setTimeout( function() {
+            $sliderTop.slick({
+              infinite: true,
+              slidesToShow: 1,
+              slidesToScroll: 1,
+              asNavFor: '.' + target + ' .sliderBottom'
+            });
+            
+            $sliderBottom.slick({
+              infinite: true,
+              arrows: false,
+              slidesToShow: 4,
+              slidesToScroll: 1,
+              asNavFor: '.' + target + ' .sliderTop',
+              focusOnSelect: true
+            });
+          }, 0);
+        },
+        onClose: function() {
+          $body.removeClass('is-overflow');
+          $sliderTop.slick('unslick');
+        }
+      });
     });
 });

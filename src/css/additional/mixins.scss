@@ -46,11 +46,11 @@ mixins for:
 @mixin show() {
   visibility: visible;
   opacity: 1;
-  transition: opacity $transition-normal, visibility $transition-normal;
+  transition: all $transition-normal;
 }
 
 @mixin hide() {
   visibility: hidden;
   opacity: 0;
-  transition: opacity $transition-normal, visibility $transition-normal;
+  transition: all $transition-normal;
 }
