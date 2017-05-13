@@ -1,10 +1,16 @@
 /***** products *****/
 .products {
   margin: -90px 0 40px;
+
+  .slick-list {
+    width: 100%;
+    overflow: visible;
+  }
 }
 
 .productCol {
   position: relative;
+  width: 25%;
   height: 376px;
   cursor: pointer;
 

@@ -237,6 +237,17 @@ $(document).ready(function() {
 
 
 
+    // products slider
+    $('.slider-products').slick({
+      infinite: true
+      , slidesToShow: 4
+      , slidesToScroll: 1
+      , arrows: false
+      // , variableWidth: true
+    });
+
+
+
     // popups with sliders
     $body.on('click', '.popup-open', function(e) {
       e.preventDefault();
