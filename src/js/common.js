@@ -143,7 +143,8 @@ $(document).ready(function() {
     function init(){
         myMap = new ymaps.Map("map", {
             center: [55.76, 37.64],
-            zoom: 10
+            zoom: 10,
+            controls: ['zoomControl', 'fullscreenControl']
         });
 
         myMap.behaviors.disable('scrollZoom');
