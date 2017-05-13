@@ -61,7 +61,7 @@ gulp.task('compile-css', function () {
         .pipe(sourcemaps.init()) //То же самое что и с js
         .pipe(sass()) //Скомпилируем
         .pipe(autoprefixer({browsers: ['last 2 versions']})) //Добавим вендорные префиксы
-        // .pipe(cssmin()) //Сожмем
+        .pipe(cssmin()) //Сожмем
         .pipe(sourcemaps.write())
         .pipe(gulp.dest(path.build.css)) //И в build
         .pipe(reload({stream: true}));
@@ -71,7 +71,7 @@ gulp.task('compile-js', function () {
     gulp.src(path.src.js) //Найдем наш main файл
         .pipe(rigger()) //Прогоним через rigger
         .pipe(sourcemaps.init()) //Инициализируем sourcemap
-        // .pipe(uglify()) //Сожмем наш js
+        .pipe(uglify()) //Сожмем наш js
         .pipe(sourcemaps.write()) //Пропишем карты
         .pipe(gulp.dest(path.build.js)) //Выплюнем готовый файл в build
         .pipe(reload({stream: true})); //И перезагрузим сервер

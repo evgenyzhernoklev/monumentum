@@ -230,6 +230,11 @@ $(document).ready(function() {
         myMap.geoObjects.add(myCollection);
     }
 
+    $('.map-show').on('click', function(e) {
+      e.preventDefault();
+      $(this).closest('.map-sidebar').addClass('is-hidden');
+    });
+
 
 
     // popups with sliders

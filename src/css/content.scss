@@ -438,6 +438,10 @@
 .mapWrapper {
   position: relative;
   height: 710px;
+
+  .contentIn {
+    position: static;
+  }
 }
 
 .mapSidebar {
@@ -448,6 +452,7 @@
   width: 350px;
   padding: 37px 25px 8px;
   background-color: $white;
+  @include show();
 }
 
 .mapSidebar__title {
@@ -458,8 +463,57 @@
   margin-bottom: 24px;
 }
 
+.mapSidebar__link {
+  display: none;
+  margin-top: 11px;
+  height: 56px;
+  width: 100%;
+  max-width: 260px;
+  font: 12px/54px $muller-medium;
+  text-align: center;
+  text-transform: uppercase;
+  color: $black;
+  background-color: transparent;
+  border: 2px solid $gold;
+  cursor: pointer;
+  transition: background-color $transition-normal, color $transition-normal;
+
+  &:hover {
+    background-color: $gold;
+    color: $white;
+  }
+}
+
 
 
 @media (max-width: 767px) {
+  .mapWrapper {
+    height: 496px;
+  }
 
+  .mapSidebar {
+    width: auto;
+    padding: 92px 30px 8px;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(255,255,255, 0.9);
+
+    &.is-hidden {
+      @include hide();
+    }
+  }
+
+  .mapSidebar__title {
+    margin-bottom: 28px;
+  }
+
+  .mapSidebar__info {
+    margin-bottom: 21px;
+  }
+
+  .mapSidebar__link {
+    display: inline-block;
+  }
 }
