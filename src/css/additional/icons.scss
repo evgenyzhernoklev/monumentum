@@ -46,6 +46,10 @@
   @include icon(popup_close, 56px, 56px);
 }
 
+.icon--menuClose {
+  @include icon(cross_gold, 28px, 28px);
+}
+
 
 
 @media (max-width: 768px) {

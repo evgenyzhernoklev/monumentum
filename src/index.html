@@ -21,33 +21,37 @@
 </head>
 <body>
 	<nav class="menu">
-		<a class="menu__logo" href="/">m</a>
+		<a class="menu__logo menu-open" href="/">m</a>
+		<a class="menu__logoBig" href="/">monumentum</a>
 		<div class="menu__phone menuPhone">
 			<a class="menuPhone__link" href="tel:+74955075323">+7 (495) 507-53-23</a>
 		</div>
-		<ul class="menu__list menuList">
-			<li class="menuList__item menuListItem">
-				<a class="menuListItem__link menu-scroll" href="#production">Изготовление</a>
-			</li>
-			<li class="menuList__item menuListItem">
-				<a class="menuListItem__link menu-scroll" href="#steps">Процесс</a>
-			</li>
-			<li class="menuList__item menuListItem">
-				<a class="menuListItem__link menu-scroll" href="#care">Уход</a>
-			</li>
-			<li class="menuList__item menuListItem menuListItem--logo">
-				<a class="menuListItem__link" href="/">monumentum</a>
-			</li>
-			<li class="menuList__item menuListItem">
-				<a class="menuListItem__link menu-scroll" href="#map">География</a>
-			</li>
-			<li class="menuList__item menuListItem">
-				<a class="menuListItem__link menu-scroll" href="#vacancies">Вакансии</a>
-			</li>
-			<li class="menuList__item menuListItem">
-				<a class="menuListItem__link menu-scroll" href="#contacts">Контакт</a>
-			</li>
-		</ul>
+		<div class="menu__listWrapper menuListWrapper menu-wrapper-mobile">
+			<span class="menuListWrapper__close icon icon--menuClose menu-close"></span>
+			<ul class="menuListWrapper__list menuList">
+				<li class="menuList__item menuListItem">
+					<a class="menuListItem__link menu-scroll" href="#production">Изготовление</a>
+				</li>
+				<li class="menuList__item menuListItem">
+					<a class="menuListItem__link menu-scroll" href="#steps">Процесс</a>
+				</li>
+				<li class="menuList__item menuListItem">
+					<a class="menuListItem__link menu-scroll" href="#care">Уход</a>
+				</li>
+				<li class="menuList__item menuListItem menuListItem--logo">
+					<a class="menuListItem__link" href="/">monumentum</a>
+				</li>
+				<li class="menuList__item menuListItem">
+					<a class="menuListItem__link menu-scroll" href="#map">География</a>
+				</li>
+				<li class="menuList__item menuListItem">
+					<a class="menuListItem__link menu-scroll" href="#vacancies">Вакансии</a>
+				</li>
+				<li class="menuList__item menuListItem">
+					<a class="menuListItem__link menu-scroll" href="#contacts">Контакт</a>
+				</li>
+			</ul>
+		</div>
 	</nav>
 
 	<header class="header">
@@ -278,7 +282,7 @@
 			</div>
 			<p class="copyright">
 				Разработка и поддержка —<br>
-				<a class="copyright__authorLink" href="#">Bongo Research&Development</a>
+				<a class="copyright__authorLink" href="http://bongord.com/">Bongo Research&Development</a>
 			</p>
 		</div>
 	</footer>
@@ -608,5 +612,35 @@
 	</div>
 
 	<script src="js/app.js"></script>
+
+	<!-- Yandex.Metrika counter -->
+	<script type="text/javascript">
+	    (function (d, w, c) {
+	        (w[c] = w[c] || []).push(function() {
+	            try {
+	                w.yaCounter43709914 = new Ya.Metrika({
+	                    id:43709914,
+	                    clickmap:true,
+	                    trackLinks:true,
+	                    accurateTrackBounce:true,
+	                    webvisor:true
+	                });
+	            } catch(e) { }
+	        });
+
+	        var n = d.getElementsByTagName("script")[0],
+	            s = d.createElement("script"),
+	            f = function () { n.parentNode.insertBefore(s, n); };
+	        s.type = "text/javascript";
+	        s.async = true;
+	        s.src = "https://mc.yandex.ru/metrika/watch.js";
+
+	        if (w.opera == "[object Opera]") {
+	            d.addEventListener("DOMContentLoaded", f, false);
+	        } else { f(); }
+	    })(document, window, "yandex_metrika_callbacks");
+	</script>
+	<noscript><div><img src="https://mc.yandex.ru/watch/43709914" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+	<!-- /Yandex.Metrika counter -->
 </body>
 </html>

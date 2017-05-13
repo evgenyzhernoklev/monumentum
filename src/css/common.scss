@@ -71,6 +71,10 @@ button {
 @media (max-width: 768px) {
   body {
     font-size: 14px;
+
+    &.mobile-overflow {
+      overflow: hidden;
+    }
   }
 
   .titleMain {
