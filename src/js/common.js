@@ -1,7 +1,8 @@
 $(document).ready(function() {
     var $window = $(window),
         $body = $('body'),
-        scrollTop = 0;
+        scrollTop = 0
+        MOBILE_BREAKPOINT = 767;
 
     // check if browser supports svg
     var supportsSVG = !!document.createElementNS && !!document.createElementNS("http://www.w3.org/2000/svg", "svg").createSVGRect;
@@ -61,17 +62,32 @@ $(document).ready(function() {
 
 
     // sidebar steps
-    $('.step-toggle-title').on('click', function(e) {
+    var $stepToggleInfo = $('.step-toggle-info'),
+        $stepToggleTitle = $('.step-toggle-title');
+
+    $stepToggleTitle.on('click', function(e) {
       e.preventDefault();
-      $(this)
-        .toggleClass('is-active')
-        .siblings('.step-toggle-info')
-        .stop().slideToggle(function() {
-          $(this).css({
-            'height': 'auto',
-            'padding-bottom': '26px'
+
+      if (viewportSize.getWidth() <= MOBILE_BREAKPOINT) {
+        $(this)
+          .toggleClass('is-active')
+          .siblings('.step-toggle-info')
+          .stop().slideToggle(function() {
+            $(this).css({
+              'height': 'auto',
+              'padding-bottom': '26px'
+            });
           });
-        });
+      }
+    });
+
+    $window.on('resize', function() {
+      if (viewportSize.getWidth() >= MOBILE_BREAKPOINT) {
+        $stepToggleInfo.css('display', 'block');
+      } else {
+        $stepToggleTitle.removeClass('is-active');
+        $stepToggleInfo.css('display', 'none');
+      }
     });
 
 

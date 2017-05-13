@@ -150,7 +150,7 @@
 
 .stepsListItem {
   position: relative;
-  padding: 4px 0 100px 45px;
+  padding: 4px 0 74px 45px;
   border-left: 1px solid rgba(0,0,0, 0.1);
 
   &:last-child {
@@ -178,7 +178,7 @@
 }
 
 .stepsListItem__text {
-
+  padding-bottom: 26px;
 }
 
 // vacancies
@@ -287,7 +287,6 @@
 
   .stepsListItem__text {
     display: none;
-    padding-bottom: 26px;
   }
 }
 
