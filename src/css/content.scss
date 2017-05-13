@@ -188,7 +188,7 @@
 
 .vacanciesListItem {
   margin-bottom: 30px;
-  padding: 34px 33px 40px;
+  padding: 34px 33px 14px;
   border: 1px solid #E5E5E5;
 
   &:last-child {
@@ -208,7 +208,7 @@
 }
 
 .vacanciesListItem__info {
-
+  padding-bottom: 26px;
 }
 
 
@@ -286,6 +286,31 @@
   }
 
   .stepsListItem__text {
+    display: none;
+  }
+
+  // vacancies
+  .vacanciesList {
+    padding: 3px 0 40px;
+  }
+
+  .vacanciesListItem {
+    margin-bottom: 20px;
+    padding: 16px 20px 0;
+  }
+
+  .vacanciesListItem__subtitle {
+    margin-bottom: 5px;
+    font-size: 10px;
+    line-height: 17px;
+  }
+
+  .vacanciesListItem__title {
+    display: inline-block;
+    cursor: pointer;
+  }
+
+  .vacanciesListItem__info {
     display: none;
   }
 }
@@ -427,4 +452,12 @@
 
 .mapSidebar__info {
   margin-bottom: 24px;
+}
+
+
+
+@media (max-width: 767px) {
+  .mapWrapper {
+    margin-bottom: 42px;
+  }
 }

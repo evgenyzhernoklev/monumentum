@@ -63,7 +63,8 @@ $(document).ready(function() {
 
     // sidebar steps
     var $stepToggleInfo = $('.step-toggle-info'),
-        $stepToggleTitle = $('.step-toggle-title');
+        $stepToggleTitle = $('.step-toggle-title'),
+        slideInfo_bottomPadding = '26px';
 
     $stepToggleTitle.on('click', function(e) {
       e.preventDefault();
@@ -75,7 +76,7 @@ $(document).ready(function() {
           .stop().slideToggle(function() {
             $(this).css({
               'height': 'auto',
-              'padding-bottom': '26px'
+              'padding-bottom': slideInfo_bottomPadding
             });
           });
       }
