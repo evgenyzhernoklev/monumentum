@@ -79,6 +79,8 @@ $(document).ready(function() {
       contentBlocksTopPoints.forEach(function(item, i, arr) {
         if (scrollTop > arr[i] && scrollTop < arr[i+1]) {
           current = i;
+        } else if (scrollTop > arr[arr.length - 1]) {
+          current = arr.length - 1;
         }
       });
       $menuLinks.removeClass('is-active');
