@@ -199,6 +199,7 @@ $(document).ready(function() {
         onClose: function() {
           $body.removeClass('is-overflow');
           $sliderTop.slick('unslick');
+          $sliderBottom.slick('unslick');
         }
       });
     });
