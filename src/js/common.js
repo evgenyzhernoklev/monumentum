@@ -19,7 +19,7 @@ $(document).ready(function() {
           sidebarHeight = $sidebar.innerHeight(),
           sidebarStartPosition = $sidebarWrapper.offset().top,
           sidebarLeftPosition = $sidebarWrapper.offset().left,
-          sidebarStopPosition = $sidebarWrapper.offset().top + sidebarWrapperHeight - sidebarHeight;
+          sidebarStopPosition = sidebarStartPosition + sidebarWrapperHeight - sidebarHeight;
 
       function checkSidebarPosition() {
         scrollTop = $window.scrollTop();
@@ -47,18 +47,14 @@ $(document).ready(function() {
         sidebarHeight = $sidebar.innerHeight();
         sidebarStartPosition = $sidebarWrapper.offset().top;
         sidebarLeftPosition = $sidebarWrapper.offset().left;
-        sidebarStopPosition = $sidebarWrapper.offset().top + sidebarWrapperHeight - sidebarHeight;
+        sidebarStopPosition = sidebarStartPosition + sidebarWrapperHeight - sidebarHeight;
 
         checkSidebarPosition();
       }
 
-
-      $window.on('load scroll', function() {
-        checkSidebarPosition();
-      });
-
-      $window.on('resize', function() {
-        updateSidebarPosition();
+      $window.on({
+        'load scroll': checkSidebarPosition,
+        'resize': updateSidebarPosition
       });
     });
 
