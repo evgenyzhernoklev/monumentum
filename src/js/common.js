@@ -17,11 +17,11 @@ $(document).ready(function() {
           sidebarWrapperHeight = $sidebarWrapper.height(),
           $sidebar = $sidebarWrapper.find('.sidebar-scroll'),
           sidebarHeight = $sidebar.innerHeight(),
-          sidebarStartPosition = $sidebar.offset().top,
-          sidebarLeftPosition = $sidebar.offset().left,
+          sidebarStartPosition = $sidebarWrapper.offset().top,
+          sidebarLeftPosition = $sidebarWrapper.offset().left,
           sidebarStopPosition = $sidebarWrapper.offset().top + sidebarWrapperHeight - sidebarHeight;
 
-      $window.on('load scroll', function() {
+      function checkSidebarPosition() {
         scrollTop = $window.scrollTop();
 
         if (scrollTop > sidebarStartPosition) {
@@ -40,6 +40,25 @@ $(document).ready(function() {
         } else {
           $sidebar.removeClass('is-fixed').css('left', '0');
         }
+      }
+
+      function updateSidebarPosition() {
+        sidebarWrapperHeight = $sidebarWrapper.height();
+        sidebarHeight = $sidebar.innerHeight();
+        sidebarStartPosition = $sidebarWrapper.offset().top;
+        sidebarLeftPosition = $sidebarWrapper.offset().left;
+        sidebarStopPosition = $sidebarWrapper.offset().top + sidebarWrapperHeight - sidebarHeight;
+
+        checkSidebarPosition();
+      }
+
+
+      $window.on('load scroll', function() {
+        checkSidebarPosition();
+      });
+
+      $window.on('resize', function() {
+        updateSidebarPosition();
       });
     });
 
