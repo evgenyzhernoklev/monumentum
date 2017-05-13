@@ -213,6 +213,86 @@
 
 
 
+@media (max-width: 960px) {
+  .infoScroll {
+    padding-left: 365px;
+  }
+}
+
+
+
+@media (max-width: 767px) {
+  // sidebar
+  .infoScroll {
+    padding: 0;
+  }
+
+  .infoScrollSidebar {
+    position: static;
+    width: auto;
+    margin: 0 0 33px;
+    padding: 0;
+
+    &.is-fixed {
+      position: static;
+    }
+  }
+
+  .infoScrollSidebar__title {
+    margin-bottom: 25px;
+  }
+
+  .infoScrollSidebar__text {
+    margin-bottom: 20px;
+  }
+
+  // steps
+  .stepsList {
+    margin-bottom: 39px;
+  }
+
+  .stepsListItem {
+    position: relative;
+    padding: 7px 0 0 20px;
+    border: 0;
+  }
+
+  .stepsListItem__title {
+    display: inline-block;
+    margin-bottom: 14px;
+    cursor: pointer;
+
+    &:after {
+      content: '+';
+      position: absolute;
+      top: 12px;
+      right: 0;
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      color: #818181;
+      font: 20px/20px $muller-regular;
+      text-align: center;
+      border: 1px solid #818181;
+      border-radius: 50%;
+    }
+
+    &.is-active {
+      &:after {
+        content: '-';
+        line-height: 16px;
+      }
+    }
+  }
+
+  .stepsListItem__text {
+    display: none;
+    padding-bottom: 26px;
+  }
+}
+
+
+
 /***** care *****/
 .contentIn--care {
   padding-top: 100px;

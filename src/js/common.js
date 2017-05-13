@@ -60,6 +60,22 @@ $(document).ready(function() {
 
 
 
+    // sidebar steps
+    $('.step-toggle-title').on('click', function(e) {
+      e.preventDefault();
+      $(this)
+        .toggleClass('is-active')
+        .siblings('.step-toggle-info')
+        .stop().slideToggle(function() {
+          $(this).css({
+            'height': 'auto',
+            'padding-bottom': '26px'
+          });
+        });
+    });
+
+
+
     // menu
     var $menuWrapper = $('.menu'),
         $menuWrapperMobile = $menuWrapper.find('.menu-wrapper-mobile'),
