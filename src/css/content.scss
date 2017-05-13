@@ -290,6 +290,10 @@
   }
 
   // vacancies
+  .vacanciesWrapper {
+    padding-top: 42px;
+  }
+
   .vacanciesList {
     padding: 3px 0 40px;
   }
@@ -457,7 +461,5 @@
 
 
 @media (max-width: 767px) {
-  .mapWrapper {
-    margin-bottom: 42px;
-  }
+
 }
