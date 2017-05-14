@@ -287,7 +287,17 @@ $(document).ready(function() {
               infinite: true,
               slidesToShow: 1,
               slidesToScroll: 1,
-              asNavFor: '.' + target + ' .sliderBottom'
+              asNavFor: '.' + target + ' .sliderBottom',
+              responsive: [
+                {
+                  breakpoint: 767,
+                  settings: {
+                    arrows: false,
+                    dots: true,
+                    adaptiveHeight: true
+                  }
+                }
+              ]
             });
 
             $sliderBottom.slick({
