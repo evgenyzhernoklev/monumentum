@@ -1,18 +1,20 @@
 /***** products *****/
 .contentWrapper--products {
+  margin: -125px 0 0;
+  padding: 35px 0;
+  overflow: hidden;
+
   .contentIn {
-    max-width: 1114px;
+    max-width: 1084px;
     padding: 0;
   }
 }
 
 .products {
-  margin: -90px 0 0;
-
   .slick-list {
     width: 100%;
-    padding: 0 45px;
-    // overflow: visible;
+    padding: 0 30px;
+    overflow: visible;
   }
 }
 
@@ -101,20 +103,9 @@
 
 
 
-@media (max-width: 960px) {
-  .contentWrapper--products {
-    .contentIn {
-      padding-left: 0;
-      padding-right: 0;
-    }
-  }
-}
-
-
-
 @media (max-width: 767px) {
-  .products {
-    margin: -45px 0 0;
+  .contentWrapper--products {
+    margin: -80px 0 0;
   }
 }
 
@@ -122,7 +113,7 @@
 
 /***** scroll blocks *****/
 .contentWrapper--steps {
-  padding-top: 38px;
+  padding-top: 3px;
 }
 
 .infoScroll {
@@ -252,7 +243,7 @@
 
 @media (max-width: 767px) {
   .contentWrapper--steps {
-    padding-top: 58px;
+    padding-top: 23px;
   }
 
   // sidebar
