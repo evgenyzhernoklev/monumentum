@@ -239,11 +239,30 @@ $(document).ready(function() {
 
     // products slider
     $('.slider-products').slick({
-      infinite: true
-      , slidesToShow: 4
-      , slidesToScroll: 1
-      , arrows: false
-      // , variableWidth: true
+      infinite: false,
+      slidesToShow: 4,
+      slidesToScroll: 1,
+      arrows: false,
+      responsive: [
+        {
+          breakpoint: 960,
+          settings: {
+            slidesToShow: 3
+          }
+        },
+        {
+          breakpoint: 767,
+          settings: {
+            slidesToShow: 2
+          }
+        },
+        {
+          breakpoint: 580,
+          settings: {
+            slidesToShow: 1
+          }
+        }
+      ]
     });
 
 

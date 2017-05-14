@@ -1,10 +1,18 @@
 /***** products *****/
+.contentWrapper--products {
+  .contentIn {
+    max-width: 1114px;
+    padding: 0;
+  }
+}
+
 .products {
-  margin: -90px 0 40px;
+  margin: -90px 0 0;
 
   .slick-list {
     width: 100%;
-    overflow: visible;
+    padding: 0 45px;
+    // overflow: visible;
   }
 }
 
@@ -93,15 +101,30 @@
 
 
 
+@media (max-width: 960px) {
+  .contentWrapper--products {
+    .contentIn {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+}
+
+
+
 @media (max-width: 767px) {
   .products {
-    margin: -45px 0 40px;
+    margin: -45px 0 0;
   }
 }
 
 
 
 /***** scroll blocks *****/
+.contentWrapper--steps {
+  padding-top: 38px;
+}
+
 .infoScroll {
   position: relative;
   padding-top: 100px;
@@ -228,6 +251,10 @@
 
 
 @media (max-width: 767px) {
+  .contentWrapper--steps {
+    padding-top: 58px;
+  }
+
   // sidebar
   .infoScroll {
     padding: 0;
