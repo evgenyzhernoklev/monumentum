@@ -267,6 +267,33 @@ $(document).ready(function() {
 
 
 
+    // make sliders
+    function insertSlides(targetPopup, slidesNumber) {
+      var $target = $('.popup-' + targetPopup),
+          $sliderTop = $target.find('.sliderTop'),
+          $sliderBottom = $target.find('.sliderBottom');
+
+      for (var i = 1; i <= slidesNumber; i++) {
+        var slideTop = '<div class="sliderTop__slide sliderTopSlide">' +
+					              '<img class="sliderTopSlide__img" src="img/products/' + targetPopup + '/slide' + i + '.jpg">' +
+				               '</div>',
+            slideBottom = '<div class="sliderBottom__slide sliderBottomSlide">' +
+    					              '<div class="sliderBottomSlide__overlay"></div>' +
+    					              '<img class="sliderBottomSlide__img" src="img/products/' + targetPopup + '/slide' + i + '.jpg">' +
+    				              '</div>';
+
+        $sliderTop.append(slideTop);
+        $sliderBottom.append(slideBottom);
+      }
+    }
+
+    insertSlides('vertical', 64);
+    insertSlides('horizontal', 38);
+    insertSlides('exclusive', 51);
+    insertSlides('fence', 72);
+
+
+
     // popups with sliders
     $body.on('click', '.popup-open', function(e) {
       e.preventDefault();
