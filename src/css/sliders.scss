@@ -106,11 +106,7 @@
 
     li {
       display: inline-block;
-      margin-right: 10px;
-
-      &:last-child {
-        margin-right: 0;
-      }
+      margin: 0 5px 10px;
 
       &.slick-active {
         button {
