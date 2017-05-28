@@ -100,10 +100,10 @@ $(document).ready(function() {
         $menuLinks = $menuWrapper.find('.menu-scroll'),
         clickMenuFlag = false,
         $contentBlocks = $('.content-scroll'),
-        contentBlocksTopPoints = [],
-        collectContentBlocksTopPoints = function () {
+        contentBlocksYPosition = [],
+        collectContentBlocksYPosition = function () {
           $contentBlocks.each(function(index, element) {
-            contentBlocksTopPoints.push($(element).offset().top);
+            contentBlocksYPosition.push($(element).offset().top);
           });
         };
 
@@ -124,7 +124,7 @@ $(document).ready(function() {
     function checkActiveContentBlocks(scrollTop) {
       var current;
 
-      contentBlocksTopPoints.forEach(function(item, i, arr) {
+      contentBlocksYPosition.forEach(function(item, i, arr) {
         if (scrollTop > arr[i] && scrollTop < arr[i+1]) {
           current = i;
         } else if (scrollTop > arr[arr.length - 1]) {
@@ -135,7 +135,7 @@ $(document).ready(function() {
       $menuLinks.eq(current).addClass('is-active');
     }
 
-    collectContentBlocksTopPoints();
+    collectContentBlocksYPosition();
 
     $window
       .on('load scroll', function() {
@@ -153,7 +153,7 @@ $(document).ready(function() {
         }
       })
       .on('resize', function() {
-        collectContentBlocksTopPoints();
+        collectContentBlocksYPosition();
       });
 
     $menuLinks.on('click', function(e) {
