@@ -100,12 +100,13 @@ $(document).ready(function() {
         $menuLinks = $menuWrapper.find('.menu-scroll'),
         clickMenuFlag = false,
         $contentBlocks = $('.content-scroll'),
-        contentBlocksYPosition = [],
-        collectContentBlocksYPosition = function () {
-          $contentBlocks.each(function(index, element) {
-            contentBlocksYPosition.push($(element).offset().top);
-          });
-        };
+        contentBlocksYPosition = [];
+
+    function collectContentBlocksYPosition() {
+      $contentBlocks.each(function(index, element) {
+        contentBlocksYPosition.push($(element).offset().top);
+      });
+    };
 
     function scrollToElement(target) {
       var targetPosition = $(target).offset().top - MENU_HEIGHT;
