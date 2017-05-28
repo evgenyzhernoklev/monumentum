@@ -153,6 +153,7 @@ $(document).ready(function() {
         }
       })
       .on('resize', function() {
+        contentBlocksYPosition = [];
         collectContentBlocksYPosition();
       });
 
