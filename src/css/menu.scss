@@ -184,9 +184,19 @@
     vertical-align: middle;
     padding: 20px 70px;
     background-color: $dark-blue;
+
+    &:before {
+      content: '';
+      @include icon(menu_mobile_bg, 456px, 398px);
+      position: absolute;
+      top: 50%;
+      margin-top: -199px;
+      right: -165px;
+    }
   }
 
   .menuListItem {
+    position: relative;
     display: block;
 
     &:last-child {
